@@ -183,6 +183,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CMemoryMappedFileManager.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SHMemoryRead.h" />
     <ClInclude Include="SHMemoryReadDlg.h" />
@@ -190,6 +191,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CMemoryMappedFileManager.cpp" />
     <ClCompile Include="SHMemoryRead.cpp" />
     <ClCompile Include="SHMemoryReadDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
