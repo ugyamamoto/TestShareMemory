@@ -138,76 +138,76 @@ LPVOID CMemoryMappedFileManager::GetSHMA() {
 }
 
 
-void CMemoryMappedFileManager::Read(LPVOID lpReadValue) {
-
-	//HANDLE = OpenMappedFile?
-	if (!m_hShareMemory) {
-
-		//ÅÀÇ»ÇØÇÍÇŒçÏÇÈ
-		if (!Create(m_nSize, m_lpzName)) {
-
-			//ÅÀé∏îs
-			return;
-		}
-
-	}
-
-	//ã§óLÉÅÉÇÉäÇ©ÇÁíléÊìæ
-	if (m_pMapView != NULL) {
-
-			
-
-	}
-	
-	LPCTSTR pBuf = (LPTSTR)MapViewOfFile(m_hShareMemory,FILE_MAP_ALL_ACCESS,NULL,NULL,m_nSize);
-	if (pBuf != NULL) {
-
-		//m_pMapView = pBuf;
-
-	}
-
-	//memcpy_s(&pBuf,lpReadValue,sizeof(lpReadValue));
-
-
-}
-
-void CMemoryMappedFileManager::Write(LPVOID lpReadValue) {
-
-	LPCSTR pszVal = (LPCSTR)lpReadValue;
-
-	if (!m_hShareMemory) {
-
-		return;
-
-	}
-	
-	//Open
-	HANDLE hMap = OpenFileMapping(FILE_MAP_ALL_ACCESS,FALSE,m_lpzName);
-	if (!hMap) {
-		//Error
-		return;
-
-	}
-
-
-	LPCTSTR pBuf = (LPTSTR)MapViewOfFile(hMap,FILE_MAP_ALL_ACCESS,0,0,m_nSize);
-	if (!pBuf) {
-		//Error
-		return;
-
-	}
-
-	
-
-
-
-	//CopyMemory((PVOID)pBuf, pszVal, (_tcslen(pszVal) * sizeof(TCHAR));
-
-	//
-	UnmapViewOfFile(pBuf);
-
-
-}
+//void CMemoryMappedFileManager::Read(LPVOID lpReadValue) {
+//
+//	//HANDLE = OpenMappedFile?
+//	if (!m_hShareMemory) {
+//
+//		//ÅÀÇ»ÇØÇÍÇŒçÏÇÈ
+//		if (!Create(m_nSize, m_lpzName)) {
+//
+//			//ÅÀé∏îs
+//			return;
+//		}
+//
+//	}
+//
+//	//ã§óLÉÅÉÇÉäÇ©ÇÁíléÊìæ
+//	if (m_pMapView != NULL) {
+//
+//			
+//
+//	}
+//	
+//	LPCTSTR pBuf = (LPTSTR)MapViewOfFile(m_hShareMemory,FILE_MAP_ALL_ACCESS,NULL,NULL,m_nSize);
+//	if (pBuf != NULL) {
+//
+//		//m_pMapView = pBuf;
+//
+//	}
+//
+//	//memcpy_s(&pBuf,lpReadValue,sizeof(lpReadValue));
+//
+//
+//}
+//
+//void CMemoryMappedFileManager::Write(LPVOID lpReadValue) {
+//
+//	LPCSTR pszVal = (LPCSTR)lpReadValue;
+//
+//	if (!m_hShareMemory) {
+//
+//		return;
+//
+//	}
+//	
+//	//Open
+//	HANDLE hMap = OpenFileMapping(FILE_MAP_ALL_ACCESS,FALSE,m_lpzName);
+//	if (!hMap) {
+//		//Error
+//		return;
+//
+//	}
+//
+//
+//	LPCTSTR pBuf = (LPTSTR)MapViewOfFile(hMap,FILE_MAP_ALL_ACCESS,0,0,m_nSize);
+//	if (!pBuf) {
+//		//Error
+//		return;
+//
+//	}
+//
+//	
+//
+//
+//
+//	//CopyMemory((PVOID)pBuf, pszVal, (_tcslen(pszVal) * sizeof(TCHAR));
+//
+//	//
+//	UnmapViewOfFile(pBuf);
+//
+//
+//}
 
 //îjä¸
 bool CMemoryMappedFileManager::Close()
