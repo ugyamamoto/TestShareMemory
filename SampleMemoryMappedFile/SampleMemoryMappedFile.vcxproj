@@ -183,6 +183,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CMemoryMappedFileManager.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SampleMemoryMappedFile.h" />
     <ClInclude Include="SampleMemoryMappedFileDlg.h" />
@@ -190,6 +191,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CMemoryMappedFileManager.cpp" />
     <ClCompile Include="SampleMemoryMappedFile.cpp" />
     <ClCompile Include="SampleMemoryMappedFileDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
